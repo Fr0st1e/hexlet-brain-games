@@ -4,8 +4,9 @@ export const actual = readlineSync.question('May I have your name? ', { defaultI
 
 export const sayHi = name => `Hello, ${name}!`;
 
-export const greeting = (hi, answer) => {
+const greeting = (hi, answer) => {
   console.log(hi(answer));
   return process.exit();
 };
 
+export const acquaintance = greeting(sayHi, actual);
