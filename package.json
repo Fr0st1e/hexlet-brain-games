@@ -1,0 +1,33 @@
+{
+  "name": "logical-gamez-by-l1nk",
+  "version": "1.0.1",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "description": "This is a Hexlet first  project.",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fr0st1e/project-lvl1-s232.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fr0st1e/project-lvl1-s232/issues"
+  },
+  "homepage": "https://github.com/Fr0st1e/project-lvl1-s232#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
