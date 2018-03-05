@@ -3,10 +3,9 @@ import readlineSync from 'readline-sync';
 
 import { sayHi, actual, greeting } from '..';
 
-const acquaintance = () => {
-  console.log('Welcome to the Brain Games!');
-  return greeting(sayHi, actual);
-};
+console.log('Welcome to the Brain Games!');
+
+const acquaintance = () => greeting(sayHi, actual);
 
 acquaintance();
 
