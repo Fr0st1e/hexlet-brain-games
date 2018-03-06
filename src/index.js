@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-
-export const actual = readlineSync.question('May I have your name? ', { defaultInput: 'NoName:(' });
-
-export const sayHi = name => `Hello, ${name}!`;
-
 const greeting = (hi, answer) => {
   console.log(hi(answer));
   return process.exit();
 };
 
-export const acquaintance = greeting(sayHi, actual);
+const acquaintance = () => {
+  const actual = readlineSync.question('May I have your name? ', { defaultInput: 'NoName:(' });
+  const sayHi = name => `Hello, ${name}!`;
+  return greeting(sayHi, actual);
+};
+
+export default acquaintance;
