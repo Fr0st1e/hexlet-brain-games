@@ -1,6 +1,6 @@
 {
   "name": "logical-gamez-by-l1nk",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
