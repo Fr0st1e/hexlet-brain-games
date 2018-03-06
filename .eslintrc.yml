@@ -4,8 +4,6 @@
 
  extends:
    - 'airbnb-base'
-   - 'plugin:jest/recommended'
-   - 'plugin:flowtype/recommended'
 
  parser: babel-eslint
  
