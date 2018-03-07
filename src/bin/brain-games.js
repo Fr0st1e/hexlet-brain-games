@@ -1,7 +1,10 @@
 #!/usr/bin/env node
-import { printWelcome, getToKnow } from '..';
+import { printWelcome, getToKnow, getName } from '..';
 
 printWelcome();
+console.log('\n');
 
-getToKnow();
+const userName = getName();
+
+getToKnow(userName);
 
