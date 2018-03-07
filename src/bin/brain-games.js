@@ -1,8 +1,7 @@
 #!/usr/bin/env node
+import { printWelcome, getToKnow } from '..';
 
-import getToKnow from '..';
-
-console.log('Welcome to the Brain Games!\n');
+printWelcome();
 
 getToKnow();
 
