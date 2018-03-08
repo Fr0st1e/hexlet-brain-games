@@ -1,10 +1,5 @@
 #!/usr/bin/env node
-import { printWelcome, getToKnow, getName } from '..';
+import sayWelcome from '../games/welcome-game';
 
-printWelcome();
-console.log('\n');
-
-const userName = getName();
-
-getToKnow(userName);
+sayWelcome();
 

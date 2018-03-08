@@ -1,11 +1,6 @@
 #!/usr/bin/env node
-import { printWelcome, showRules, getToKnow, getName, isEvenGame } from '..';
+import play from '../games/even-game';
 
-printWelcome();
-showRules();
+// showRules();
 
-const userName = getName();
-
-getToKnow(userName);
-
-isEvenGame(userName);
+play();

@@ -1,33 +1,30 @@
 import readlineSync from 'readline-sync';
 
-export const printWelcome = () => console.log('Welcome to the Brain Games!');
+const printWelcome = rules => console.log(`Welcome to the Brain Games! \n${rules}`);
+const sayHi = name => console.log(`Hello, ${name}! \n`);
 
-export const showRules = () => console.log('Answer "yes" if number even otherwise answer "no".\n');
-
-export const getName = () => readlineSync.question('May I have your name? ', { defaultInput: 'NoName:(' });
-
-export const getToKnow = (userName) => {
-  const sayHi = name => `Hello, ${name}! \n`;
-  return console.log(sayHi(userName));
-};
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-export const isEvenGame = (userName) => {
-  const stages = 3;
-  const iter = (acc) => {
-    if (acc === 0) {
+const buildGame = (rules = '\n', gamesArr) => {
+  const getName = () => readlineSync.question('May I have your name? ', { defaultInput: 'NoName:(' });
+  printWelcome(rules);
+  const userName = getName();
+  sayHi(userName);
+  if (gamesArr.length === 0) {
+    return console.log();
+  }
+  const iter = (arr) => {
+    if (arr.length === 0) {
       return console.log(`Congratulations, ${userName}!`);
     }
-    const num = getRandomInt(1, 100);
-    const rightAnswer = num % 2 === 0 ? 'yes' : 'no';
-    console.log(`Question: ${num}`);
+    const currentGame = arr[0];
+    console.log(`Question: ${currentGame[0]}`);
     const answer = readlineSync.question('Your answer: ', { defaultInput: '' });
-    if (answer === rightAnswer) {
+    if (answer === currentGame[1]) {
       console.log('Correct!');
-      return iter(acc - 1);
+      return iter(arr.slice(1));
     }
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${currentGame[1]}'`);
   };
-  return iter(stages);
+  return iter(gamesArr);
 };
+
+export default buildGame;
