@@ -11,7 +11,11 @@ const generateData = () => {
   const divExpression = (num1, num2) => [`${num1} * ${num2}`, String(num1 * num2)];
   const num1 = getRandomNum(1, 100);
   const num2 = getRandomNum(1, 100);
-  const funcArray = [addExpression(num1, num2), subExpression(num1, num2), divExpression(num1, num2)];
+  const funcArray = [
+    addExpression(num1, num2),
+    subExpression(num1, num2),
+    divExpression(num1, num2),
+  ];
   return funcArray[getRandomNum(0, 3)];
 };
 
