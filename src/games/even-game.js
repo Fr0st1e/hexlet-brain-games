@@ -1,14 +1,13 @@
-import buildGame from '..';
+import { buildGame, getRandomNum } from '..';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".';
 
-const setСondition = () => {
-  const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const generateData = () => {
   const num = getRandomNum(1, 100);
   const rightAnswer = num % 2 === 0 ? 'yes' : 'no';
   return [num, rightAnswer];
 };
 
-const play = () => buildGame(rules, setСondition);
+const play = () => buildGame(rules, generateData);
 
 export default play;

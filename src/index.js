@@ -4,7 +4,9 @@ const printWelcome = () => console.log('Welcome to the Brain Games!');
 const printRules = (rules = '') => (rules === '' ? null : console.log(rules));
 const sayHi = name => console.log(`Hello, ${name}! \n`);
 
-const buildGame = (rules, gameFunc = []) => {
+export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+export const buildGame = (rules, gameFunc = []) => {
   const getName = () => readlineSync.question('May I have your name? ', { defaultInput: 'NoName:(' });
   printWelcome();
   printRules(rules);
@@ -29,5 +31,3 @@ const buildGame = (rules, gameFunc = []) => {
   };
   return iter(gameFunc, 0);
 };
-
-export default buildGame;

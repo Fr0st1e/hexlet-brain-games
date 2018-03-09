@@ -1,9 +1,6 @@
-import buildGame from '..';
+import { buildGame, getRandomNum } from '..';
 
 const rules = 'What is the result of the expression?';
-
-
-const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const generateData = () => {
   const addExpression = (num1, num2) => [`${num1} + ${num2}`, String(num1 + num2)];
