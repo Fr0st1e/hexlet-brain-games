@@ -18,7 +18,6 @@ const generateData = () => {
   const finalProgression = getProgression(progressionLength, progressionStep);
   const randomIndex = getRandomNum(0, finalProgression.length);
   const hideRandomSimbol = (index, arr) => {
-    console.log(arr);
     const plug = '..';
     return arr
       .reduce((acc, item) => (arr.indexOf(item) === index ? [plug, ...acc] : [item, ...acc]), [])
