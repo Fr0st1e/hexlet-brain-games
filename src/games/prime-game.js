@@ -1,24 +1,23 @@
 import { buildGame, getRandomNum } from '..';
 
-const isPrime = (numSymbol) => {
-  const iter = (num, divider) => {
-    if (divider === 1) {
-      return 'yes';
-    }
-    if (num % divider !== 0) {
-      return iter(num, divider - 1);
-    }
-    return 'no';
-  };
-  return iter(numSymbol, numSymbol - 1);
+const rules = 'Is this number prime?';
+
+const isPrime2 = (numSymbol, div) => {
+  if (numSymbol === 1 || (div * div <= numSymbol && numSymbol % div === 0)) {
+    return false;
+  }
+  if (div > numSymbol / 2) {
+    return true;
+  }
+  return isPrime2(numSymbol, div + 1);
 };
 
 const generateData = () => {
   const number = getRandomNum(2, 50);
-  const question = `Is this number prime? ${number}`;
-  return [question, isPrime(number)];
+  const question = `${number}`;
+  return [question, isPrime2(number, 2) ? 'yes' : 'no'];
 };
 
-const play = () => buildGame('', generateData);
+const play = () => buildGame(rules, generateData);
 
 export default play;
