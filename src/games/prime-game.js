@@ -2,7 +2,7 @@ import { buildGame, getRandomNum } from '..';
 
 const rules = 'Is this number prime?';
 
-const isPrime2 = (num) => {
+const isPrime = (num) => {
   const divider = 2;
   const iter = (numSymbol, div) => {
     if (numSymbol === 1 || (div * div <= numSymbol && numSymbol % div === 0)) {
@@ -19,7 +19,7 @@ const isPrime2 = (num) => {
 const generateData = () => {
   const number = getRandomNum(2, 50);
   const question = `${number}`;
-  return [question, isPrime2(number) ? 'yes' : 'no'];
+  return [question, isPrime(number) ? 'yes' : 'no'];
 };
 
 const play = () => buildGame(rules, generateData);
